@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap - CSS Framework</title>
+
+    <!-- Import bootsrap by online (CDN) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="#">Web Me</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="p-5 bg-secondary text-light mb-4">
+      <div class="container py-5">
+        <div class="text-center">
+          <h1>Halaman Pertama</h1>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse,
+            eveniet quis eos reprehenderit adipisci quam suscipit provident
+            similique dolore fugiat maxime distinctio soluta earum, eum tempore!
+            Suscipit unde sint voluptatem!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row column content -->
+    <section class="container text-center">
+      <div class="row">
+        <div class="col-sm-4 gx-">
+          <h1>Kolom 1</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
+            non excepturi facere assumenda quod maiores voluptate tempora
+            repudiandae eius laborum! Voluptatibus minus unde totam
+            exercitationem aliquam dolorum deleniti tempora soluta.
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <h1>Kolom 2</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
+            non excepturi facere assumenda quod maiores voluptate tempora
+            repudiandae eius laborum! Voluptatibus minus unde totam
+            exercitationem aliquam dolorum deleniti tempora soluta.
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <h1>Kolom 3</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
+            non excepturi facere assumenda quod maiores voluptate tempora
+            repudiandae eius laborum! Voluptatibus minus unde totam
+            exercitationem aliquam dolorum deleniti tempora soluta.
+          </p>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-danger table-striped">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Name</th>
+              <th>Class</th>
+              <th>City</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Abdurrohman Azis</td>
+              <td>Front End JavaScript</td>
+              <td>Serang</td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>2</td>
+              <td>Angga Yunanda</td>
+              <td>Front End JavaScript</td>
+              <td>Pandeglang</td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>3</td>
+              <td>Arif Nugraha</td>
+              <td>Back End JavaScript</td>
+              <td>Jakarta</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="container">
+      <img class="img-fluid mb-5 rounded-5" src="mirror.jpg" alt="Foto saya" />
+      <img
+        class="img-fluid mb-5 rounded-circle"
+        src="mirror.jpg"
+        alt="Foto saya"
+      />
+      <img
+        class="img-fluid mb-5 img-thumbnail"
+        src="mirror.jpg"
+        alt="Foto saya"
+      />
+    </div>
+    <!-- Import bootsrap by online (CDN) for bootstrap.js (carousell, slider, navbar mobile...) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
