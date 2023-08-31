@@ -1,3 +1,9 @@
+//  Array is first index is 0
+const kulkas = ["apple", "orange", "tomato", "mango", "durian"];
+const totalItems = kulkas.length; // 5
+console.log(kulkas[totalItems - 1]); // The last item
+
+console.log("---------------------------");
 // Array Literal
 let namaKeluarga = ["Azis", "Zisa", "Siza"];
 
