@@ -1,0 +1,21 @@
+{
+  "name": "topic5-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "log": "^6.3.1"
+  },
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^8.48.0",
+    "nodemon": "^3.0.1"
+  }
+}
