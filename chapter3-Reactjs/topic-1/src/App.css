@@ -40,3 +40,14 @@
 .read-the-docs {
   color: #888;
 }
+
+.Link {
+  color: #fff;
+  margin: 10px;
+  font-weight: 700;
+}
+
+.Link:hover {
+  color: #61dafbaa;
+  transition: 0.5;
+}
