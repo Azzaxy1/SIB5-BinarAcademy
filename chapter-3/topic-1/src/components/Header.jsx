@@ -20,6 +20,9 @@ const Header = () => {
             <Nav.Link as={Link} to="/module-styles">
               Style
             </Nav.Link>
+            <Nav.Link as={Link} to="/students">
+              Students
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
