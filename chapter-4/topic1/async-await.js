@@ -5,7 +5,7 @@ const getData = async () => {
     let data;
 
     const postResponse = await axios.get(
-      "https://jsonplaceholder.typicode.com/posts/15"
+      "https://jsonplaceholder.typicode.com/posts/12"
     );
     data = postResponse?.data;
     const { userId } = data;
