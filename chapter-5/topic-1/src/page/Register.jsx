@@ -1,23 +1,21 @@
 import { useState } from "react";
-import { Button, Card, Container, Form } from "react-bootstrap";
+import { Container, Card, Form, Button } from "react-bootstrap";
 import axios from "axios";
-import GoogleLogin from "../components/GoogleLogin";
-// import { useNavigate } from "react-router-dom";
 
-const Login = () => {
-  // const navigate = useNavigate();
-
+const Register = () => {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
-  const login = async (event) => {
+  const register = async (event) => {
     event.preventDefault();
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/v1/auth/login`,
+        `${import.meta.env.VITE_API_URL}/api/v1/auth/register`,
         {
           email,
+          name,
           password,
         }
       );
@@ -26,9 +24,6 @@ const Login = () => {
 
       // Save our token
       localStorage.setItem("token", token);
-
-      // Redirect to home
-      // navigate("/");
 
       //* Redirect to home or reload the home
       // This is imporary solution, the better solution is using redux
@@ -45,12 +40,36 @@ const Login = () => {
   return (
     <Container>
       <Card>
-        <Card.Header className="fs-2 fw-bold text-center">Login</Card.Header>
+        <Card.Header className="fs-2 fw-bold text-center">
+          Create Account
+        </Card.Header>
         <Card.Body>
-          <Form onSubmit={login}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
+          <Form onSubmit={register}>
+            <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Control
+                required
+                className=" rounded-5"
+                type="text"
+                placeholder="First Name"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+              />
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group>
+            {/* <Form.Group className="mb-3" controlId="formBasicText">
+              <Form.Control
+                className=" rounded-5 "
+                required
+                type="text"
+                placeholder="Last name"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+              />
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group> */}
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Control
+                className=" rounded-5"
                 type="email"
                 placeholder="Enter email"
                 value={email}
@@ -58,23 +77,22 @@ const Login = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
               <Form.Control
+                className=" rounded-5"
                 type="password"
                 placeholder="Password"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
-              Login
+            <Button className="rounded-5" variant="danger" type="submit">
+              Register Now
             </Button>
           </Form>
-          <GoogleLogin />
         </Card.Body>
       </Card>
     </Container>
   );
 };
 
-export default Login;
+export default Register;

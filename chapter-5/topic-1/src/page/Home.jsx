@@ -1,45 +1,66 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { Col, Row, Container } from "react-bootstrap";
+import axios from "axios";
+import { Col, Container, Row } from "react-bootstrap";
 import MovieItem from "../components/MovieItems";
 
 const Home = () => {
   const [popularMovies, setPopularMovies] = useState([]);
+  const [errors, setErrors] = useState({
+    isError: false,
+    message: null,
+  });
 
   useEffect(() => {
     const getPopularMovies = async () => {
       try {
+        // Get token from local storage
+        const token = localStorage.getItem("token");
+        if (!token) return;
+
         const response = await axios.get(
-          `${
-            import.meta.env.VITE_API_URL
-          }/3/movie/popular?language=en-US&page=2`,
+          `${import.meta.env.VITE_API_URL}/api/v1/movie/popular`,
           {
             headers: {
-              Authorization: `Bearer ${import.meta.env.VITE_API_AUTH_TOKEN}`,
+              Authorization: `Bearer ${token}`,
             },
           }
         );
-        const { data } = response;
+        const { data } = response.data;
 
-        setPopularMovies(data?.results);
+        setPopularMovies(data);
+        setErrors({ ...errors, isError: false });
       } catch (error) {
         if (axios.isAxiosError(error)) {
-          alert(error?.response?.data?.status_message);
+          setErrors({
+            ...errors,
+            isError: true,
+            message: error?.response?.data?.message || error?.message,
+          });
           return;
         }
+
         alert(error?.message);
+        setErrors({
+          ...errors,
+          isError: true,
+          message: error?.message,
+        });
       }
     };
 
     getPopularMovies();
   }, []);
 
+  if (errors.isError) {
+    return <h1>{errors.message}</h1>;
+  }
+
   if (popularMovies.length === 0) {
     return <h1>Loading....</h1>;
   }
 
   return (
-    <Container className="mt-5">
+    <Container>
       <Row className="g-5">
         {popularMovies.map((movie) => (
           <Col md={3} key={movie?.id}>
