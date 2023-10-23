@@ -1,5 +1,6 @@
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
+import { toast } from "react-toastify";
 import { Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 
@@ -31,10 +32,10 @@ function GoogleLogin({ buttonText }) {
       window.location.href = "/";
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        alert(error.response.data.message);
+        toast.error(error.response.data.message);
         return;
       }
-      alert(error.message);
+      toast.error(error.message);
     }
   };
 

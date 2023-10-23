@@ -69,8 +69,8 @@ const Login = () => {
             <Button variant="primary" type="submit">
               Login
             </Button>
+            <GoogleLogin buttonText={"Login with Google"} />
           </Form>
-          <GoogleLogin />
         </Card.Body>
       </Card>
     </Container>
