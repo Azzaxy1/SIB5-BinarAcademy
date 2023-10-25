@@ -7,7 +7,7 @@ const initialState = {
 };
 
 // Define the slice, the slice is consist of initial state and the setter of the global state
-const authSlicer = createSlice({
+const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
@@ -27,7 +27,7 @@ const authSlicer = createSlice({
 });
 
 // export the function state to set the state
-export const { setToken, setUser } = authSlicer.actions;
+export const { setToken, setUser } = authSlice.actions;
 
 // export the global state, so the variable in the initialState will be in any component
-export default authSlicer.reducer;
+export default authSlice.reducer;
