@@ -9,6 +9,7 @@ import NoAccessToken from "./components/NoAccessToken";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import ToggleToken from "./page/ToogleToken";
 
 const App = () => {
   return (
@@ -53,6 +54,8 @@ const App = () => {
                 </NoAccessToken>
               }
             />
+
+            <Route path="/toggle-token" element={<ToggleToken />} />
           </Routes>
         </BrowserRouter>
       </GoogleOAuthProvider>

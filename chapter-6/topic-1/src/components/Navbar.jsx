@@ -40,6 +40,9 @@ const NavbarComponent = () => {
                 <Nav.Link as={Link} to="/search">
                   Search Movies
                 </Nav.Link>
+                <Nav.Link as={Link} to="/toggle-token">
+                  Check your token
+                </Nav.Link>
               </>
             )}
           </Nav>
