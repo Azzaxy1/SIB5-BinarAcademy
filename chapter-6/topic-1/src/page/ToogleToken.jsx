@@ -23,7 +23,7 @@ const ToggleToken = () => {
     <Container>
       <Row>
         <Col className="mx-auto">
-          <h1>Token: {token}</h1>
+          <h3>Token: {token}</h3>
           <Button onClick={onToggleToken}>Toggle Token</Button>
         </Col>
       </Row>
